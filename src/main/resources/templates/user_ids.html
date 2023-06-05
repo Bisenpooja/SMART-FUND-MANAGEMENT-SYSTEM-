@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User IDs</title>
+    <style>
+		   
+     /* Set font color to green */
+        td, th {
+            color: Black;
+        }
+
+        /* Set table width to 100% */
+        .table-container {
+            width: 50%;
+            margin: auto;
+            
+        }
+
+        /* Set column width to 50% */
+        .table-left, .table-right {
+            width: 50%;
+            float: left;
+        }
+
+        /* Add padding and border to cells */
+        td, th {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+
+        /* Add background color to table headers */
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Add hover effect to rows */
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: forestgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            
+        }
+
+            button:hover {
+                background-color: #74C365;
+            }
+            
+    </style>
+	
+</head>
+<body>
+  <center> <h1>Status</h1></center>
+    <div class="table-container">
+    <table class="table-left">
+        <thead>
+            <tr>
+                <th>User ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="userId : ${userIds}">
+                <td th:text="${userId}"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table class="table-right">
+        <thead>
+            <tr>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="status : ${statuses}">
+                <td th:text="${status}"></td>
+            </tr>
+        </tbody>
+    </table>
+   
+            <center>
+                <div >
+				<button class="sk" type="submit">
+					<span><a href="/" th:href="@{/user/}"><b>Back to Home</b></a></span>
+				</button>	
+			</div>
+			</center>		
+</div>
+
+
+</body>
+
+</html>

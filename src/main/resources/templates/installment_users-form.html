@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Installment Users</title>
+    <style>
+        body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: black;
+           text-align: center;
+        }
+
+        form {
+          border: 2px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+        background-color: #fff;
+        max-width: 500px;
+        margin: auto;
+        }
+
+        label {
+                    display: inline-block;
+        width: 150px;
+        font-weight: bold;
+        margin-bottom: 10px;
+
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 30px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        button[type=submit] {
+            background-color: #4CAF50;
+         width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 4px;
+        font-size: 18px;
+        margin-bottom: 16px;
+        width: 100%;
+        box-sizing: border-box;
+        }
+
+        button[type=submit]:hover {
+            background-color: #45a049;
+        }
+         
+    </style>
+</head>
+<body>
+    
+    <form method="post" action="/installment-users">
+        <label for="groupId">Group ID:</label>
+        <input type="text" id="groupId" name="groupId">
+        <label for="installmentNumber">Installment Number:</label>
+        <input type="text" id="installmentNumber" name="installmentNumber">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+

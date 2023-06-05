@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Winner History</title>
+  
+  <style>
+    .winners-table {
+      border-collapse: collapse;
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .winners-table th, .winners-table td {
+      text-align: center;
+      padding: 8px;
+      border: 3px solid #ddd;
+    }
+    
+    .winners-table th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    
+    .winners-table tr:nth-child(even) {
+      background-color: white;
+    }
+    
+    .winners-table tr:hover {
+      background-color: #ddd;
+    }
+    
+    .winners-table .winner-row {
+      background-color: lightgrey;
+    }
+    
+    .winners-table .winner-row:hover {
+      background-color: #ffdf00;
+    }
+  </style>
+  
+</head>
+<body>
+  <h1>Winner History</h1>
+  <table class="winners-table">
+    <thead>
+      <tr>
+        <th>Group ID</th>
+        <th>Installment Number</th>
+        <th>Winner ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each="winnerHistory : ${winnerHistoryList}" th:class="${winnerHistory.winnerId != null} ? 'winner-row' : ''">
+        <td th:text="${winnerHistory.groupId}"></td>
+        <td th:text="${winnerHistory.installmentNumber}"></td>
+        <td th:text="${winnerHistory.winnerId}"></td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>

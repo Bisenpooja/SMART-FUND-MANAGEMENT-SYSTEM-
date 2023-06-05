@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Group List</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+
+	<style>
+		h1 {
+			margin-bottom: 1rem;
+			font-size: 2rem;
+			font-weight: 500;
+			text-align: center;
+			color: #333;
+		}
+
+		table {
+			width: 100%;
+			margin-bottom: 1rem;
+			color: #212529;
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		th,
+		td {
+			padding: 0.75rem;
+			vertical-align: middle;
+			border-top: 1px solid #dee2e6;
+			text-align: center;
+		}
+
+		thead th {
+			background-color: #f8f9fa;
+			border-bottom: 2px solid #dee2e6;
+		}
+
+		tbody tr:nth-child(odd) {
+			background-color: #f2f2f2;
+		}
+
+		a {
+			color: #007bff;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: #0056b3;
+			text-decoration: underline;
+		}
+
+		button[type="submit"] {
+			padding: 0.5rem 1rem;
+			font-size: 1rem;
+			font-weight: 400;
+			line-height: 1.5;
+			color: #fff;
+			background-color:forestgreen;
+			border-color: #007bff;
+			border-radius: 0.25rem;
+			cursor: pointer;
+			
+		}
+
+		button[type="submit"]:hover {
+			background-color: #0069d9;
+			border-color: #0062cc;
+		}
+
+		button[type="submit"] span {
+			display: inline-block;
+			padding-right: 0.5rem;
+			padding-bottom: 0.15rem;
+			vertical-align: middle;
+			font-size: 1.25rem;
+			line-height: 1.5;
+			color: #fff;
+			font-weight: 600;
+		}
+	</style>
+</head>
+
+</style>
+</head>
+<body>
+	<h1>Group List</h1>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Group ID</th>
+				<th>Group Name</th>
+				<th>Group Limit</th>
+				<th>Expiry</th>
+				<th>Status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="group : ${groups}">
+				<td th:text="${group.groupId}"></td>
+				<td th:text="${group.groupName}"></td>
+				<td th:text="${group.groupLimit}"></td>
+				<td th:text="${group.expiry}"></td>
+				<td th:text="${group.status}"></td>
+			</tr>
+		</tbody>
+		
+		
+	</table>
+	<a href="/create-group">Create New Group</a>
+	<br>
+	<br>
+	<div>
+	<center>
+				<button type="submit">
+					<a href="/" th:href="@{/group/add}"><b>Add Group Member</b>
+				</button>
+	</center>
+			</div>
+	</body>
+	</html>

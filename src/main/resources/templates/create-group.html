@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Group</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin: 0 auto;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+            input[type="date"] {
+                padding: 10px 5px;
+            }
+
+        select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: forestgreen;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+        }
+
+            button:hover {
+                background-color: #74C365;
+            }
+    </style>
+</head>
+<body>
+    <h1>Create Group</h1>
+    <form th:action="@{/create-group}" th:object="${group}" method="post">
+        <label>Group Name:</label>
+        <input type="text" id="groupName" th:field="*{groupName}">
+        <br>
+        <label>Group Limit:</label>
+        <input type="number" id="groupLimit" th:field="*{groupLimit}">
+        <br>
+        <label>Expiry:</label>
+        <input type="text" id="expiry" th:field="*{expiry}">
+        <br>
+        <label>Status:</label>
+        <input type="text" th:field="*{status}">
+        <br>
+        <button type="submit">Create Group</button>
+    </form>
+</body>
+</html>
