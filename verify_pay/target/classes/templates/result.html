@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Transaction Result</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #f5f5f5;
+			font-family: Arial, sans-serif;
+		}
+		h1 {
+			color: #4285f4;
+			text-align: center;
+			padding: 20px 0;
+			margin: 0;
+			font-size: 36px;
+			font-weight: bold;
+		}
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+			border: 1px solid #ccc;
+			width: 70%;
+			max-width: 800px;
+			background-color: #fff;
+			box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+			font-size: 16px;
+			line-height: 1.5;
+		}
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border-bottom: 1px solid #ccc;
+		}
+		th {
+			font-weight: bold;
+			background-color: #f2f2f2;
+		}
+		span {
+			color: #3c4043;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	<h1>Transaction Result</h1>
+	
+	
+	<table>
+		<tr>
+			<th>Transaction ID:</th>
+			<td><span th:text="${response.txId}"></span></td>
+		</tr>
+		<tr>
+			<th>Card Number:</th>
+			<td><span th:text="${response.cardNo}"></span></td>
+		</tr>
+		<tr>
+			<th>Transaction Date:</th>
+			<td><span th:text="${response.txDate}"></span></td>
+		</tr>
+		<tr>
+			<th>Amount:</th>
+			<td><span th:text="${response.amount}"></span></td>
+		</tr>
+		<tr>
+			<th>Transaction Result:</th>
+			<td><span th:text="${response.resultMessage}"></span></td>
+		</tr>
+	</table>
+	<div >
+	<br>
+	<br>
+	<center>
+			<button class="sk" type="submit">
+					<span><a href="/" th:href="@{/user/}"><b>Back to Home</b></a></span>
+				</button>
+			</div>
+	</center>
+</body>
+</html>
